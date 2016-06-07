@@ -1,0 +1,18 @@
+.vote {
+    width: 40px;
+    margin-top: 20px;
+    margin-left: 20px;
+    text-align: center;
+    font-size: 24px;
+    color: #999;
+}
+.vote_total {
+    display: block;
+}
+.glyphicon {
+    display: block;
+    cursor: pointer;
+}
+.highlighted {
+    color: orange;
+}

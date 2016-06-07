@@ -1,0 +1,12 @@
+
+i {
+    display: inline-block;
+    margin-left: 20px;
+}
+.glyphicon-heart {
+    color: #c3c3c3;
+    cursor: pointer;
+}
+.highlighted {
+    color: deeppink;
+}
