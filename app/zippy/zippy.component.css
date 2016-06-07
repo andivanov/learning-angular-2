@@ -1,0 +1,13 @@
+.zippy {
+    border: 1px solid #bbb;
+    border-radius: 2px;
+    margin-bottom: 10px;
+}
+.zippy-title {
+    background-color: #eee;
+    padding: 10px 20px;
+}
+
+.zippy-content {
+    padding: 10px 20px;
+}

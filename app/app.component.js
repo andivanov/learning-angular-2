@@ -1,4 +1,4 @@
-System.register(['angular2/core', './vote/vote.component'], function(exports_1, context_1) {
+System.register(['angular2/core', './zippy/zippy.component'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,17 +10,18 @@ System.register(['angular2/core', './vote/vote.component'], function(exports_1, 
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, vote_component_1;
+    var core_1, zippy_component_1;
     var AppComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             },
-            function (vote_component_1_1) {
-                vote_component_1 = vote_component_1_1;
+            function (zippy_component_1_1) {
+                zippy_component_1 = zippy_component_1_1;
             }],
         execute: function() {
+            //import { VoteComponent } from './vote/vote.component';
             AppComponent = (function () {
                 function AppComponent() {
                     this.post = {
@@ -34,8 +35,11 @@ System.register(['angular2/core', './vote/vote.component'], function(exports_1, 
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: "<h1>My First Angular 2 App</h1>\n\n               <voter\n                [voteCount]=\"post.voteCount\"\n                [myVote]=\"post.myVote\"\n                (vote)=\"onVote($event)\"\n               ></voter>\n                ",
-                        directives: [vote_component_1.VoteComponent]
+                        template: "<h1>My First Angular 2 App</h1>\n\n               <!--\n               <voter\n                [voteCount]=\"post.voteCount\"\n                [myVote]=\"post.myVote\"\n                (vote)=\"onVote($event)\"\n               ></voter>\n               -->\n\n               <zippy title=\"Who can see my stuff?\">\n                    Content of who can see my stuff.\n               </zippy>\n               <zippy title=\"Who can contact me?\">\n                    Content of who can contact me.\n               </zippy>\n\n\n                ",
+                        directives: [
+                            //VoteComponent
+                            zippy_component_1.ZippyComponent
+                        ]
                     }), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);
