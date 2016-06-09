@@ -2,12 +2,13 @@
   "name": "angular2-quickstart",
   "version": "1.0.0",
   "scripts": {
-    "start": "concurrent \"npm run tsc:w\" \"npm run lite\" ",
+    "start": "concurrent \"npm run tsc:w\" \"npm run lite\" \"npm run watch-css\" ",
     "tsc": "tsc",
     "tsc:w": "tsc -w",
     "lite": "lite-server",
     "typings": "typings",
-    "postinstall": "typings install"
+    "postinstall": "typings install",
+    "watch-css": "node-sass -w app/sass/ -o build/css/"
   },
   "license": "ISC",
   "dependencies": {
@@ -23,6 +24,7 @@
   "devDependencies": {
     "concurrently": "^2.1.0",
     "lite-server": "^2.1.0",
+    "node-sass": "^3.7.0",
     "typescript": "^1.7.5"
   }
 }
