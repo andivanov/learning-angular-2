@@ -1,3 +1,11 @@
 <div class="voter">
-    <i class="glyphicon"></i>
+    <i class="glyphicon glyphicon-menu-up vote_icon"
+        [class.highligted]="myVote == 1"
+        (click)="upVote()"></i>
+    <div class="vote_counter">{{voteCount + myVote}}</div>
+    <i class="glyphicon glyphicon-menu-down vote_icon"
+        [class.highligted]="myVote == -1"
+        (click)="downVote()"></i>
 </div>
+
+<hr>

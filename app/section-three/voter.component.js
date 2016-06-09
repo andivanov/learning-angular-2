@@ -20,7 +20,36 @@ System.register(['angular2/core'], function(exports_1, context_1) {
         execute: function() {
             VoterComponent = (function () {
                 function VoterComponent() {
+                    this.voteCount = 0;
+                    this.myVote = 0;
+                    this.vote = new core_1.EventEmitter();
                 }
+                VoterComponent.prototype.upVote = function () {
+                    if (this.myVote == 1) {
+                        return;
+                    }
+                    this.myVote++;
+                    this.vote.emit({ myVote: this.myVote });
+                };
+                VoterComponent.prototype.downVote = function () {
+                    if (this.myVote == -1) {
+                        return;
+                    }
+                    this.myVote--;
+                    this.vote.emit({ myVote: this.myVote });
+                };
+                __decorate([
+                    core_1.Input(), 
+                    __metadata('design:type', Number)
+                ], VoterComponent.prototype, "voteCount", void 0);
+                __decorate([
+                    core_1.Input(), 
+                    __metadata('design:type', Number)
+                ], VoterComponent.prototype, "myVote", void 0);
+                __decorate([
+                    core_1.Output(), 
+                    __metadata('design:type', Object)
+                ], VoterComponent.prototype, "vote", void 0);
                 VoterComponent = __decorate([
                     core_1.Component({
                         selector: 'voter',

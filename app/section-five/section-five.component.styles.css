@@ -1,0 +1,14 @@
+.ng-invalid.ng-touched {
+    border: 1px solid red;
+}
+.alert.alert-danger {
+    position: relative;
+}
+.alert.alert-danger:after {
+    content: '!';
+    color: red;
+    position: absolute;
+    top: -28px;
+    right: 15px;
+    z-index: 1000000;
+}

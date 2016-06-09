@@ -1,0 +1,85 @@
+<h3>{{sectionTitle}}</h3>
+
+<!-- ngIf -->
+<div *ngIf="courses.length > 0">
+    List of Courses
+</div>
+<div *ngIf="courses.length == 0">
+    You don't have any courses yet
+</div>
+<br>
+
+<!-- ngSwitch -->
+<ul class="nav nav-pills">
+    <li [class.active]="viewMode == 'map'"><a (click)="viewMode='map'">Map View</a></li>
+    <li [class.active]="viewMode == 'list'"><a (click)="viewMode='list'">List View</a></li>
+</ul>
+
+<div [ngSwitch]="viewMode">
+    <template [ngSwitchWhen]="'map'" ngSwitchDefaul>Map View Content</template>
+    <template [ngSwitchWhen]="'list'">List View Content</template>
+</div>
+<br>
+
+<!-- ngFor -->
+<ul>
+    <li *ngFor="#book of books, #i = index">
+        {{i + 1}} - {{book}}
+    </li>
+</ul>
+<br>
+
+<!-- Pipes -->
+<ul>
+    <li>{{ lecture.title | uppercase | lowercase }}</li>
+    <li>{{ lecture.rating | number:'2.2-2' }}</li>
+    <li>{{ lecture.students | number }}</li>
+    <li>{{ lecture.price | currency:'USD':true:'2.2-2' }}</li>
+    <li>{{ lecture.releaseDate | date:'MMM yyyy' }}</li>
+    <li>{{ lecture | json }}</li>
+</ul>
+<br>
+
+<!-- Custom Pipes -->
+<p>{{ customPipesTitle }}</p>
+<p>{{ customPipesCopy | summary: 60 }}</p>
+<br><br>
+
+<!-- ngClass -->
+<i class="glyphicon"
+    [ngClass]="{
+        'glyphicon-star-empty': !isFavorite,
+        'glyphicon-star': isFavorite
+    }"
+    (click)="onClick()"></i>
+<br><br>
+
+
+<!-- ngStyle -->
+<button
+    [ngStyle]="{
+        backgroundColor: canSave ? 'blue' : 'black',
+        color: canSave ? 'yellow' : 'white'
+    }"
+>{{ buttonText }}</button>
+<br><br>
+
+<!-- Elvis Operator: combination of '?' and '.' - checks if the value is not 'null' -->
+<ul>
+    <li>Title: {{ task?.title }}</li>
+    <li>Assigned to: {{ task?.assignee?.name }}</li>
+</ul>
+<br>
+
+<!-- ngContent -->
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <ng-content select=".heading"></ng-content>
+    </div>
+    <div class="panel-body">
+        <ng-content select=".body"></ng-content>
+    </div>
+</div>
+
+<hr>
+

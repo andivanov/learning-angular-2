@@ -1,0 +1,15 @@
+.zippy {
+    box-sizing: border-box;
+    width: 90%;
+    margin: 0 auto 20px;
+}
+.zippy-title {
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #ccc;
+}
+.zippy-content {
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+}
